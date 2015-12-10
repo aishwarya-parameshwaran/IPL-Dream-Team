@@ -1,0 +1,624 @@
+<html>
+<head>
+<title>HW8trial</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=no">
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<style>
+fieldset{
+width:100%;
+margin:0px auto;
+border:0; 
+background-color:rgba(0,0,0,0.2);
+}
+
+body{
+background-image: url("http://cs-server.usc.edu:45678/hw/hw8/images/bg.jpg");
+background-repeat: no-repeat;
+background-size:100%;
+overflow-x: hidden; 
+}
+
+.nav-pills > li > a
+{
+background-color: #ffffff;
+}
+
+label.error {
+    color:#B74442;
+}
+
+@media screen and (min-width: 320px) { 
+.roundy{
+ border-radius:30px;
+ margin-bottom:12px;
+ }
+ #butgrp{
+	padding-left:14px;
+	padding-right:14px;
+ }
+ .fe4{
+ margin-bottom:40px;
+ }
+ }
+
+ 
+ /* Small devices (tablets, 768px and up) */
+ @media screen and (min-width: 768px) {
+.roundy{
+ border-radius:30px;
+ margin-bottom:12px;
+ }
+ #butgrp{
+	padding-left:14px;
+	padding-right:14px;
+ }
+ .fe4{
+ margin-bottom:40px;
+ }
+ }
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) { 
+.roundy{
+ border-radius:10px;
+ margin-right:10px;
+ }
+ #next7days .col-md-12{
+ background-color:#2F3439;
+ }
+ #butgrp{
+	padding-top:5px;
+	
+ }
+ .fe1{
+ padding-right:0px;
+ }
+ .fe2{
+ padding-left:5px;
+ padding-right:0px;
+ }
+ .fe3{
+ padding-left:5px;
+ padding-right:0px;
+ }
+ .fe4{
+ padding-left:7px;
+ padding-top:6px;
+ }
+ .fe41{
+ margin-bottom:0px;
+ }
+
+}
+
+
+
+</style>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+<script>
+$().ready(function(){
+$("#details").validate({
+rules:{
+st_ad:"required",
+city:"required",
+stsel:"required"
+},
+messages:{
+st_ad:"Please enter the street address",
+city:"Please enter the city",
+stsel:"Please select a state"
+}
+});
+});
+
+</script>
+<script type="text/javascript">
+function clearing()
+{
+	document.getElementById("resultdisplay").innerHTML="";
+	document.forms["details"]["st_ad"].value="";
+	document.forms["details"]["city"].value="";
+	var csel=document.getElementById("stsel");
+    csel.selectedIndex=0;
+	document.forms["details"]["degree"][0].checked=true;
+	
+}
+function clearing_dynamic()
+{
+	document.getElementById("toclear").innerHTML="";
+}
+</script>
+
+<script type="text/javascript">
+var darray;
+$("document").ready(function(){
+  $("#details").submit(function(event){
+  var x = document.getElementById("stsel");
+  var y = x.options[x.selectedIndex].value;
+  //alert("Values sending are: " + $('input[name=st_ad]').val()+","+$('input[name=city]').val()+","+y+","+$('input[name=degree]').val());
+    var data = {
+      'st_ad': $('input[name=st_ad]').val(),
+       'city': $('input[name=city]').val(),
+      'stsel': y,
+	  'degree': $('input[name=degree]').val()
+    };
+    //data = $(this).serialize() + "&" + $.param(data);
+	//alert("serialized data being sent: " + data);
+    $.ajax({
+	  url: "http://localhost/ipl/Web/index8.php",
+	  data: {
+      'st_ad': $('input[name=st_ad]').val(),
+       'city': $('input[name=city]').val(),
+      'stsel': y,
+	  'degree': $('input[name=degree]').val()
+    },
+      type: "GET",
+	  dataType: "json",
+      encode:true ,
+      success: function(data) {
+	  darray = data
+	  console.log(data);
+        $("#trialDisplay").html(
+           "<br />JSON: " + data
+        );
+
+        
+      },
+	  error: function(data) {
+	  console.log(data);
+	  }
+	   // stop the form from submitting the normal way and refreshing the page
+        //event.preventDefault();
+    });
+    return false;
+  });
+});
+
+</script>
+
+</head>
+<body>
+<div class="container">
+<div align="center"><p style="margin-top:17px; margin-bottom:30px; font-weight:500; font-size:35px;">Forecast Search</p></div>
+<form role="form" name="details" id="details" method="GET" action="index8.php">
+	<fieldset style="padding-top:15px;">
+	<div class="form-group" >
+	<div class="col-md-3 fe1">
+		<label for="st_ad" class="control-label"><b><font color="white">Street Address: </font><font color="red">*</font></b></label>
+		<input type="text" class="form-control" name="st_ad" id="st_ad" placeholder="Enter street address"/>
+	</div>
+	<div class="col-md-2 fe2" >
+		<label for="city" class="control-label"><font color="white">City: </font><font color="red">*</font></label>
+		<input type="text" class="form-control" name="city" id="city" placeholder="Enter the city name"/>
+	</div>
+	<div class="col-md-2 fe3">
+		<label for="stsel" class="control-label"><font color="white">State: </font><font color="red">*</font></label>
+		<select class="form-control" name="stsel" id="stsel">
+			<option selected=selected value=""><font-color="black">Select your state...</font></option>
+			<option value="AL">Alabama</option>
+			<option value="AK">Alaska</option>
+			<option value="AZ">Arizona</option>
+			<option value="AR">Arkansas</option>
+			<option value="CA">California</option>
+			<option value="CO">Colorado</option>
+			<option value="CT">Connecticut</option>
+			<option value="DE">Delaware</option>
+			<option value="DC">District Of Columbia</option>
+			<option value="FL">Florida</option>
+			<option value="GA">Georgia</option>
+			<option value="HI">Hawaii</option>
+			<option value="ID">Idaho</option>
+			<option value="IL">Illinois</option>
+			<option value="IN">Indiana</option>
+			<option value="IA">Iowa</option>
+			<option value="KS">Kansas</option>
+			<option value="KY">Kentucky</option>
+			<option value="LA">Louisiana</option>
+			<option value="ME">Maine</option>
+			<option value="MD">Maryland</option>
+			<option value="MA">Massachusetts</option>
+			<option value="MI">Michigan</option>
+			<option value="MN">Minnesota</option>
+			<option value="MS">Mississippi</option>
+			<option value="MO">Missouri</option>
+			<option value="MT">Montana</option>
+			<option value="NE">Nebraska</option>
+			<option value="NV">Nevada</option>
+			<option value="NH">New Hampshire</option>
+			<option value="NJ">New Jersey</option>
+			<option value="NM">New Mexico</option>
+			<option value="NY">New York</option>
+			<option value="NC">North Carolina</option>
+			<option value="ND">North Dakota</option>
+			<option value="OH">Ohio</option>
+			<option value="OK">Oklahoma</option>
+			<option value="OR">Oregon</option>
+			<option value="PA">Pennsylvania</option>
+			<option value="RI">Rhode Island</option>
+			<option value="SC">South Carolina</option>
+			<option value="SD">South Dakota</option>
+			<option value="TN">Tennessee</option>
+			<option value="TX">Texas</option>
+			<option value="UT">Utah</option>
+			<option value="VT">Vermont</option>
+			<option value="VA">Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="WV">West Virginia</option>
+			<option value="WI">Wisconsin</option>
+			<option value="WY">Wyoming</option>
+		</select>
+	</div>
+	</div>
+	<div class="form-group col-md-2 fe4" >
+	<label for="degree" class="control-label fe41"><font color="white">Degree: </font><font color="red">*</font></label>
+	<div class="form-inline">
+	<input type="radio" name="degree" value="fahrenheit" checked><font color="white">&nbsp;Fahrenheit&nbsp;</font>
+	<input type="radio" name="degree" value="celsius"><font color="white">&nbsp;Celsius</font>
+	</div>
+	</div>
+	<!--div class="col-md-offset-1 col-md-2 col-xs-12"-->
+	<div class="form-group col-md-offset-1 col-md-2 col-xs-offset-5" id="butgrp">
+		<button type="submit" class="btn btn-primary btn-sm">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+		</button>
+		<button type="button" class="btn btn-default btn-sm" onClick="clearing()">
+			<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> &nbsp&nbspClear
+		</button>
+	</div>
+	<div class="row form-group form-inline  col-md-offset-10 col-md-2 col-xs-offset-5">
+	<font color="white">Powered by:</font>
+	<a href="http://forecast.io"><img src="http://cs-server.usc.edu:45678/hw/hw8/images/forecast_logo.png" alt="Forecast.io" style="width:75px;height:60px;border:0;"></a>
+	</div>
+	<!--/div-->
+	</fieldset>
+</form>
+<hr color="white">
+<div id="trialDisplay"></div>
+<hr color="white">
+<div id="resultdisplay">
+<!--create nav tabs:-->
+<div class="container">
+
+<ul class="nav nav-pills" role="tablist">
+	<li class="active"><a href="#rightnow" role="tab" data-toggle="tab">Right Now</a></li>
+	<li><a href="#next24hrs" role="tab" data-toggle="tab">Next 24 Hours</a></li>
+	<li><a href="#next7days" role="tab" data-toggle="tab">Next 7 Days</a></li>
+</ul>
+
+
+<!--create tab contents:-->
+<div class="tab-content">
+	<div class="active tab-pane" id="rightnow">
+		
+		<!--<h2>Reviews</h2>-->
+		<!--left side table and head-->
+		<div id="leftside">
+		<div class="col-md-6">
+		<!--left head-->
+		<div class="row" style="background-color:#F27E7F;">
+		<div class="col-md-6"><img src="http://cs-server.usc.edu:45678/hw/hw8/images/cloud_night.png" class="center-block" height="150" width="150" alt="cloudy night"></div>
+		<div class="col-md-6">
+		<p class="text-center"><font color="white"><b>Mostly cloudy in Los Angeles, CA</b></font></p>
+		<p class="text-center"><font color="white"><b><span id="bigTemp" style="font-size:70px;">71</span><span style="font-size:28px"><sup> &deg F</sup></span></b></font></p>
+		
+		
+		
+		
+		<div class="text-center">
+		<b><font color="Blue">L:70&deg </font><font color="Brown">|</font><font color="Green"> H:79&deg </font></b>
+		<span style="float:right;"><a href="http://forecast.io"><img src="http://cs-server.usc.edu:45678/hw/hw8/images/fb_icon.png" alt="Fb" style="width:30px;height:30px;border:0;"></a></span>
+		</div>
+		
+		</div>
+		</div>
+		<div class="row">
+		<table class="table">
+		<tr style="background-color:white;">
+		<td>Precipitation</td>
+		<td>None</td>
+		</tr>
+		<tr class="danger">
+		<td>Precipitation</td>
+		<td>None</td>
+		</tr>
+		<tr style="background-color:white;">
+		<td>Precipitation</td>
+		<td>None</td>
+		</tr>
+		<tr class="danger">
+		<td>Precipitation</td>
+		<td>None</td>
+		</tr>
+		<tr style="background-color:white;">
+		<td>Precipitation</td>
+		<td>None</td>
+		</tr>
+		<tr class="danger">
+		<td>Precipitation</td>
+		<td>None</td>
+		</tr>
+		<tr style="background-color:white;">
+		<td>Precipitation</td>
+		<td>None</td>
+		</tr>
+		<tr class="danger">
+		<td>Precipitation</td>
+		<td>None</td>
+		</tr>
+		</table>
+		</div>
+		</div>
+		</div>
+		<!-- right hand side open map-->
+		<div id="rightside">
+		<div class="col-md-6">
+		
+		</div>
+		</div>
+	</div>
+	<div class="tab-pane" id="next24hrs">
+				<div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
+		<div>
+
+		<div id="OrderPackages">
+		
+    <table id="tableSearchResults" class="table" style="table-layout:fixed;">
+        <thead>
+            <tr style="background-color:#337AB7;">
+                <!--th align="center">Time</th>
+                <th align="center">Summary</th>
+                <th align="center">View Details</th-->
+				
+				<td  style="color:white;text-align:center;word-wrap: break-word;">Time</td>
+		<td style="color:white;text-align:center;word-wrap: break-word;">Summary</td>
+		<td style="color:white;text-align:center;word-wrap: break-word;">Cloud Cover</td>
+		<td style="color:white;text-align:center;word-wrap: break-word;">Temp (&degF)</td>
+		<td style="color:white;text-align:center;word-wrap: break-word;">View Details</td>
+            </tr>
+        </thead>
+        <tbody style="background-color:white;">
+            <tr id="package1" >
+                <td align="center">10:00 PM</td>
+			<td align="center">
+			<img src="http://cs-server.usc.edu:45678/hw/hw8/images/cloud_night.png" class="center-block" height="50" width="40" alt="cloudy night">
+			</td>
+			<td align="center">0%</td>
+			<td align="center">70.28</td>
+                <td align="center" class="accordion-toggle" data-toggle="collapse" 
+
+data-parent="#OrderPackages" data-target=".packageDetails1" style="color:#337AB7;"><span class="glyphicon 
+
+glyphicon-plus"></span>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" class="hiddenRow" style="padding:0px;">
+                    <div class="accordion-body collapse packageDetails1" id="accordion1" align="center" >
+                        
+						<div class="well">
+							<div class="table-responsive">
+								<table class="table">
+									<tr>
+										<td align="center"><b>Wind</b></td>
+										<td align="center"><b>Humidity</b></td>
+										<td align="center"><b>Visibility</b></td>
+										<td align="center"><b>Pressure</b></td>
+									</tr>
+									<tr style="background-color:#F5F5F5;">
+										<td align="center">4 mph</td>
+										<td align="center">83 %</td>
+										<td align="center">8.37 mi</td>
+										<td align="center">1012.6 mb</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+                    </div>
+                </td>
+            </tr>
+            
+			<tr id="package2" >
+                <td align="center">10:00 PM</td>
+				<td align="center">
+					<img src="http://cs-server.usc.edu:45678/hw/hw8/images/cloud_night.png" class="center-block" height="50" width="40" alt="cloudy night">
+				</td>
+				<td align="center">0%</td>
+				<td align="center">70.28</td>
+                <td align="center" class="accordion-toggle" data-toggle="collapse" data-parent="#OrderPackages" data-target=".packageDetails2" style="color:#337AB7;">
+					<span class="glyphicon glyphicon-plus"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" class="hiddenRow" style="padding:0px;">
+                    <div class="accordion-body collapse packageDetails2" id="accordion1" align="center">
+                        
+						<div class="well">
+							<div class="table-responsive">
+								<table class="table">
+									<tr>
+										<td align="center"><b>Wind</b></td>
+										<td align="center"><b>Humidity</b></td>
+										<td align="center"><b>Visibility</b></td>
+										<td align="center"><b>Pressure</b></td>
+									</tr>
+									<tr style="background-color:#F5F5F5;">
+										<td align="center">4 mph</td>
+										<td align="center">83 %</td>
+										<td align="center">8.37 mi</td>
+										<td align="center">1012.6 mb</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+	
+</div>
+
+		</div>	
+	</div>
+	</div>
+	<div class="tab-pane" id="next7days">
+			<div class="col-md-12">
+	<br><div style="text-align:center;">
+	
+		<a class="btn btn-default roundy col-xs-12 col-md-1 col-md-offset-2" data-toggle="modal" href="#myModal1" role="button" style="background-color:#337AB7;border-color:#337AB7;color:white;">
+			<p><b>Friday</b></p>
+			<p><b>Oct 16</b></p>
+			<img src="http://cs-server.usc.edu:45678/hw/hw8/images/cloud_night.png" class="center-block" height="55" width="65" alt="cloudy night">
+			<p><b>Min<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>67&deg </b></p>
+			<p><b>Max<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>81&deg </b></p>
+		</a>
+		
+		<a class="btn btn-default roundy col-xs-12 col-md-1" data-toggle="modal" href="#myModal2" role="button" style="background-color:#EC4444;border-color:#EC4444;color:white;">
+			<p><b>Friday</b></p>
+			<p><b>Oct 16</b></p>
+			<img src="http://cs-server.usc.edu:45678/hw/hw8/images/cloud_night.png" class="center-block" height="55" width="65" alt="cloudy night">
+			<p><b>Min<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>67&deg </b></p>
+			<p><b>Max<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>81&deg </b></p>
+		</a>
+		<a class="btn btn-default roundy col-xs-12 col-md-1" data-toggle="modal" href="#myModal3" role="button" style="background-color:#E58D4E;border-color:#E58D4E;color:white;">
+			<p><b>Friday</b></p>
+			<p><b>Oct 16</b></p>
+			<img src="http://cs-server.usc.edu:45678/hw/hw8/images/cloud_night.png" class="center-block" height="55" width="65" alt="cloudy night">
+			<p><b>Min<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>67&deg </b></p>
+			<p><b>Max<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>81&deg </b></p>
+		</a>
+		<a class="btn btn-default roundy col-xs-12 col-md-1" data-toggle="modal" href="#myModal4" role="button" style="background-color:#A7A439;border-color:#A7A439;color:white;">
+			<p><b>Friday</b></p>
+			<p><b>Oct 16</b></p>
+			<img src="http://cs-server.usc.edu:45678/hw/hw8/images/rain.png" class="center-block" height="55" width="65" alt="cloudy night">
+			<p><b>Min<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>67&deg </b></p>
+			<p><b>Max<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>81&deg </b></p>
+		</a>
+		<a class="btn btn-default roundy col-xs-12 col-md-1" data-toggle="modal" href="#myModal5" role="button" style="background-color:#9770A7;border-color:#9770A7;color:white;">
+			<p><b>Friday</b></p>
+			<p><b>Oct 16</b></p>
+			<img src="http://cs-server.usc.edu:45678/hw/hw8/images/rain.png" class="center-block" height="55" width="65" alt="cloudy night">
+			<p><b>Min<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>67&deg </b></p>
+			<p><b>Max<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>81&deg </b></p>
+		</a>
+		<a class="btn btn-default roundy col-xs-12 col-md-1" data-toggle="modal" href="#myModal6" role="button" style="background-color:#F37C7E;border-color:#F37C7E;color:white;">
+			<p><b>Friday</b></p>
+			<p><b>Oct 16</b></p>
+			<img src="http://cs-server.usc.edu:45678/hw/hw8/images/cloud_night.png" class="center-block" height="55" width="65" alt="cloudy night">
+			<p><b>Min<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>67&deg </b></p>
+			<p><b>Max<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>81&deg </b></p>
+		</a>
+		<a class="btn btn-default roundy col-xs-12 col-md-1" data-toggle="modal" href="#myModal7" role="button" style="background-color:#CE4571;border-color:#CE4571;color:white;">
+			<p><b>Friday</b></p>
+			<p><b>Oct 16</b></p>
+			<img src="http://cs-server.usc.edu:45678/hw/hw8/images/cloud_night.png" class="center-block" height="55" width="65" alt="cloudy night">
+			<p><b>Min<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>67&deg </b></p>
+			<p><b>Max<br>Temp</b></p>
+			
+			<p style="font-size:28px;"><b>81&deg </b></p>
+		</a>
+		</div>
+	<br>
+	</div>
+	</div>
+	<!-- modals -->
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal-label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModal-label">Weather in Los Angeles on Oct 16</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+				<img src="http://cs-server.usc.edu:45678/hw/hw8/images/cloud_night.png" class="center-block" height="150" width="150" alt="cloudy night">
+				</div>
+				
+				<div class="row">
+				<div class="text-center">
+				<h3><b>Friday:<font color="#FFA500"> Mostly cloudy throughout the day.</font></b></h3>
+				</div>
+				</div>
+				
+				<div class="row">
+				<div class="col-md-4 text-center">
+				<h4>Sunrise Time</h4>
+				<p>07:00 AM</p>
+				</div>
+				<div class="col-md-4 text-center">
+				<h4>Sunrise Time</h4>
+				<p>07:00 AM</p>
+				</div>
+				<div class="col-md-4 text-center">
+				<h4>Sunrise Time</h4>
+				<p>07:00 AM</p>
+				</div>
+				</div>
+				
+				<div class="row">
+				<div class="col-md-4 text-center">
+				<h4>Sunrise Time</h4>
+				<p>07:00 AM</p>
+				</div>
+				<div class="col-md-4 text-center">
+				<h4>Sunrise Time</h4>
+				<p>07:00 AM</p>
+				</div>
+				<div class="col-md-4 text-center">
+				<h4>Sunrise Time</h4>
+				<p>07:00 AM</p>
+				</div>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default active" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+</div>
+</div>
+
+</div>
+
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<noscript>
+</body>
+</html>

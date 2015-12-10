@@ -1,0 +1,13 @@
+<button id="change">Change the var</button>
+<script>
+$("#change").click(function() {
+    $.post("ajaxexample.php", {change: $(this).val()},
+        function (data)
+        {
+           $("#mainContent").html(data);
+        });
+});
+</script>
+<div id="mainContent">
+    
+</div>

@@ -1,0 +1,260 @@
+<html style="background: #282A2E;">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
+<link href="css/style1.css" rel="stylesheet" type="text/css" media="all" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" href="css/magnific-popup111.css">
+<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+	<!--  jquery plguin -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!--start slider -->
+	   <link rel="stylesheet" href="css/fwslider.css" media="all">
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+		<script src="js/fwslider.js"></script>
+		
+		
+		
+		
+		
+		<script>
+		var j=0;
+						function buyPlayers() {
+						
+						
+						
+						var nums = document.getElementById("ul");
+						var listItem = nums.getElementsByTagName("li");
+						var newNums1 = new Array();
+						var newNums2 = [];
+						var newNums3 = [];
+						
+						
+						search:	for (var i = 0; i < listItem.length; i++) {
+						
+						
+							
+							newNums1[i] = document.getElementById("id"+i).value;
+						//	alert("newnums"+newNums1[i]);
+							if (newNums1[i] != "")
+							{
+							
+							var items2=newNums1[i];
+							
+							newNums2[i]= document.getElementById("p"+i).innerHTML;
+							var pos1 = newNums2[i].indexOf("<");
+							var items = newNums2[i].substring(0,pos1-1);
+							var items3= items+"  : $  ";
+							
+							
+							/*newNums3[j] = document.getElementById("x"+j).innerHTML;
+							while( newNums3[j] != "" )
+							{
+							j++;
+							}
+							*/
+							document.getElementById("x"+j).innerHTML=(items3+items2);
+							j++;
+							
+							items4=document.getElementById("d1").innerHTML;
+							document.getElementById("d1").innerHTML = (items4 - items2);
+							
+							var elem = document.getElementById("t"+i);
+							elem.parentNode.removeChild(elem);
+							
+							break search;
+							
+						
+							}
+							
+						
+						}
+						
+						}
+						
+						</script>
+<body>
+
+
+
+
+
+
+
+
+<div class="header_bg" >
+<div class="wrap">
+	<div class="header">
+		
+		<div class="h_right">
+			 <ul style="display:bolder;display:block;">		
+				<li style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="index.html">Home</a></li>
+				<li class="active" style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="services.html" >Negotiation</a></li>
+				<li style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="portfolio.html" >Portfolio</a></li>
+				<li style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="pricing.php" >Auction</a></li>
+				<li style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="about.html" >Predictor</a></li>
+				<li class="last" style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="aboutUs.html">About Us</a></li>
+			</ul>
+			
+	        <nav class="nav">
+	            <ul style="display:bolder;display:block;">		
+				<li style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="index.html">Home</a></li>
+				<li class="active" style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="services.html" >Services</a></li>
+				<li style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="portfolio.html" >Portfolio</a></li>
+				<li style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="pricing.php" >Auction</a></li>
+				<li style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="about.html">Predictor</a></li>
+				<li class="last" style="float:left;margin-right:10px;"><a style="font-size: 17px;color: #ffffff;text-transform: uppercase;font-family: 'Roboto', sans-serif;margin:0px 20px;font-weight: 100;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;" href="aboutUs.html">About Us</a></li>
+			</ul>
+	        </nav>
+	        <script type="text/javascript" src="js/responsive.menu.js"></script>
+			<!-- end smart_nav * -->
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="pricing-plans" id="pricing">
+<div class="wrap">
+					
+						<h3>AUCTION</h3>
+						<div class="pricing-grids">
+					
+						</div>
+			
+						<div class="pricing-grid">							
+							<div class="price-value">
+								<a href="#">BUDGET</a>
+							</div>
+							<h3><a id="d1"href="#">1100000000</a></h3>
+							
+							<!--<div class="cart">
+								<div class="span3"><a class="popup-with-zoom-anim" href="#small-dialog"><i>Purchase</i></a>
+							</div>	    -->
+							</div>
+						</div>
+							<div class="clear"> </div>
+							
+							<div class="pricing-grids">
+						<div class="pricing-grid1">							
+							<div class="price-value">
+								<a href="#">PRESENT TEAM</a>
+							</div>
+							<h3><a href="#"></a></h3>
+							<ul>
+								<li><a href="#">Rohit Sharma</a></li>
+								<li><a href="#">Kieron Pollard</a></li>
+								<li><a href="#">Aaron Finch</a></li>
+								<li><a href="#">Pragyan Ojha</a></li>
+								<li><a href="#">Harbhajan Singh</a></li>
+								<li><a href="#">Lasith Malinga</a></li>
+								<li><a href="#">Corey Anderson</a></li>
+								<li><a href="#">Ambati Rayadu</a></li>
+								<li><a href="#">Aditya Tare</a></li>
+								<li><a href="#">Jasprit Bumrah</a></li>
+								<li><a href="#">Vinay Kumar</a></li>
+								<li><a href="#">Josh Hazlewood</a></li>
+								<li><a href="#">Marchant de Lange</a></li>
+								<li><a href="#">Shreyas Gopal</a></li>
+								<li><a href="#">Lendl Simmons</a></li>
+								<li><a href="#">Aiden Blizzard</a></li>
+								<li><a href="#">Unmukt Chand</a></li>
+								<li><a href="#">Parthiv Patel</a></li>
+								<li><a href="#">Mitchell McClenaghan</a></li>
+								
+								
+								
+								
+								
+							</ul>
+							<div class="cart1">
+							<!--	<div class="span3"><a class="popup-with-zoom-anim" href="#small-dialog"><j></j></a>
+							</div>	-->
+							</div>
+						</div>
+						<div class="pricing-grid2">
+							<div class="price-value">
+								<a href="#">DREAM TEAM</a>
+							</div>
+							<h3><a href="#"></a></h3>
+							<ul>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+							</ul>
+							<div class="cart1">
+							<!--	<div class="span3"><a class="popup-with-zoom-anim" href="#small-dialog"><k>Purchase</k></a>
+							</div>		-->
+							</div>
+						</div>
+						<div class="pricing-grid3">							
+							<div class="price-value">
+								<a href="#">TO BE AUCTIONED</a>
+							</div>
+							<h3><a href="#"></a></h3>
+								
+								
+							
+							<!--<iframe src="/default.asp" width="200" height="200" scrolling="yes">
+  
+							</iframe>  -->
+							<ul id="ul">
+								
+								
+								<li id="t0"><a href="#" id="p0">Rohit Sharma <br> BASE PRICE = 5,00,00,000 <br> <input type="text" name="n0" size="3" id="id0"> </a></li>
+								
+								<li id="t1"><a href="#" id="p1">Virat Kohli <br> BASE PRICE = 7,00,00,000 <br><input type="text" name="n1" size="3" id="id1"></a></li>
+								<li id="t2"><a href="#" id="p2">M.S.Dhoni  <br> BASE PRICE = 8,00,00,000 <br><input type="text" name="n2" size="3" id="id2"></a></li>
+								<li id="t3"><a href="#" id="p3">Suresh Raina <br> BASE PRICE = 4,00,00,000 <br><input type="text" name="n3" size="3" id="id3"></a></li>
+								<li id="t4"><a href="#" id="p4">Narine <br> BASE PRICE = 5,00,00,000 <br><input type="text" name="n4" size="3" id="id4"></a></li>
+								<li id="t5"><a href="#" id="p5">Maxwell  <br> BASE PRICE = 4,00,00,000 <br><input type="text" name="n5" size="3" id="id5"></a></li>   
+								
+							
+							</ul>
+							<div class="cart1">
+								
+								
+								
+							<div class="span3"><a class="popup-with-zoom-anim" id="demo" href="#small-dialog" onclick="buyPlayers()"><l>BuyPlayer</l></a>
+							</div> 
+							
+							</div>
+						</div>
+						
+						
+						
+						
+						
+							<div class="pricing-grid4">							
+							<div class="price-value">
+								<a href="#">BOUGHT PLAYERS</a>
+							</div>
+							<h3><a href="#"></a></h3>
+							<ul id="p2">
+							
+								
+							
+								<li><a href="#" id="x0"></a></li>
+								<li><a href="#" id="x1"></a></li>
+								<li><a href="#" id="x2"></a></li>
+								<li><a href="#" id="x3"></a></li>
+								<li><a href="#" id="x4"></a></li>
+								<li><a href="#" id="x5"></a></li>
+							</ul>
+							<div class="cart1">
+							<!--	<div class="span3"><a class="popup-with-zoom-anim" href="#small-dialog"><m>Purchase</m></a>
+							</div>	-->
+							</div>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						</body>
+						</html>
+						
+						

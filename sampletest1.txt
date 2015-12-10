@@ -1,0 +1,89 @@
+[t]the best 4mp compact digital available  
+camera[+2]##this camera is perfect for an enthusiastic amateur photographer . 
+picture[+3], macro[+3]##the pictures are razor-sharp , even in macro . 
+size[+2][u]##it is small enough to fit easily in a coat pocket or purse . 
+weight[+1][u]##it is light enough to carry around all day without bother . 
+feature[+2][u]##operating its many features is easy and often obvious - i 'm no annie lebovitz , but i was able to figure out most of its abilities just messing around with it at a camera store . 
+manual[+2]##the manual does a fine job filling in any blanks that remain . 
+auto focus[+2],scene mode[+2]##the auto-focus performs well , but i love having the 12 optional scene modes - they are dummy-proof , and correspond to many situations in which i would actually seek to use the camera . 
+rechargable battery[+2]##comes with a 16 mb compact flash and one rechargable battery the charging unit , included , is fast and small . 
+##i bought a 256 mb cf and a second battery , so it 's good to go on a long vacation . 
+camera[+2]##i enthusiastically recommend this camera . 
+[t]perfect to grow into 
+##i got my camera three days back , and although i had some experience with digital cameras prior to purchasing this one , i still rate myself as a beginner . 
+##i bought this camera because it fit my budget and the pre-production and production model reviews were positive . 
+camera[+2][p], use[+1][u], feature[+2]##it 's easy to use , and yet very feature rich . 
+auto mode[+1],scene mode[+2]##in the auto mode it functions basically as a point and click , the scene modes are very easy to use and produce good results . 
+manual mode[+2]##the manual mode is feature rich and i can 't wait to get the hang of it . 
+macro mode[+3],picture[+3]##the macro mode is exceptional , the pictures are very clear and you can take the pictures with the lens unbelievably close the subject . 
+battery life[+3]##the battery life is very good , i got about 90 minutes with the lcd turned on all the time , the first time around , and i have been using it with the lcd off every now and then , and have yet needed to recharge it . 
+##the camera comes with a lexar 16mb starter card , which stores about 10 images in fine mode at the highest resolution , i intend to buy a bigger card soon . 
+[t]near perfection 
+##i love photography . 
+##i had an older camera that was simply a point and shoot camera . 
+##i needed something with more power , so i bought a nikon coolpix 4300 . 
+camera[+3], use[+1]##i fell in love with this camera , it combines ease of use , with an immense amount of options and power . 
+##you can use the scene modes , or fine tune the options , i. you can change the iso level , shutter speed , etc. 
+camera[+2]##this camera is ideal for people who want more power , but do n't want to spend 1000s dollars on a camera . 
+[t]not too excited 
+##i bought coolpix 4300 two months after i had bought canon powershot s400 . 
+##reason for two ? 
+##it was not easy sharing one with my teen age kid . 
+##the two cameras are very similar in functionality and pricing . 
+##i 've had no problem with canon whatsoever . 
+picture quality[+1]##with nikon , although picture qualities are as good as any other 4 mp cameras , i 've had the following headaches ; 
+transfer[-2]##1 . pictures wo n't transfer to pc directly from the camera using the included transfer cable . 
+##i did everything i could , and it took many days of frustration before concluding that the only way to transfer to pc is with the card reader . 
+##card reader is included . 
+##2 . the speed is noticeably slower than canon , especially so with flashes on . 
+##3 . with low battery , it twice wiped out the entire pictures in the memory chip . 
+##i used lexar 256 mb and i still use it which means nothing is wrong with lexar . 
+##be very careful when the battery is low and make sure to carry extra batteries . 
+[t]only " cons " here
+##the other reviewers have clearly pointed all the good things about this camera , which i do agree . 
+##but there are certain issues might be they are to me here - all of them are minor; not major ones though , 
+auto mode[-2]##. this camera keeps on autofocussing in auto mode with a buzzing sound which can 't be stopped . 
+##would be really good if they have given an option to stop this autofocussing . 
+##. if you want to have the date ; time on the image , its only through their software " nikon view " which reads the images date ; time from the images meta-data . 
+##so if you use your card reader ; copy images - you got to onceagain open them through their software to put the date ; time . 
+##in that too , there is n't a direct way to add date ; time - you got to say ' print images ' to a different directory in which there is an option to specify the date ; time . 
+image[-2]##. even the slightest of the shakes totally distorts your image 
+indoor image[-2]##. images taken indoor were n't so clear . 
+##you got to have flash ' on ' to get it eventhough your room is well lit 
+lens cap[-3]##. lens cap is a really annoying 
+##. go ; get a high speed like lexar 12x or higher cf card . 
+##else with simpler viking cf cards , it takes couple of seconds to write a picture with approximately " fine **" picture quality  " image size : 1600 . 
+movie[-2]##. the movie clips taken will always have some ' noise ' in it - you can 't avoid that . 
+camera[+2], picture[+2], close-up shooting[+3]##but overall this is a good camera with a ' really good ' picture clarity ; an exceptional close-up shooting capability . 
+##i would rate this is 4.5 stars picture quality ; image size defined above are specific to nikon coolpix . 
+[t]bad service 
+menu dial knob[-2]##within a year , there are problems with my menu dial knob . 
+##it became stucked which makes it almost impossible to switch between modes . 
+servicing[-2]##i send my camera to nikon for servicing , took them a whole 6 weeks to diagnose the problem . 
+##worse of all , they claim that it 's some kind of internal damage and refuse to cover the cost via warranty ! 
+##they would n't repair my camera unless if i pay $ 100 for parts ? and labor ! 
+camera[+2],customer service[-2]##it is a good camera in terms of the function and quality , but take your chance with it because nikon absolutely sucks when it comes to customer service . 
+[t]system error 
+system error[-2]##got a " system error " problem 30 days after purchase . 
+camera[-2]##made the camera totally inoperable . 
+lens cap[-2]##also , the lens cap design is flawed . 
+##you have to manually take the cap off in order to use it . 
+audio[-2]##audio on video also lacking . 
+picture[+3],delay[+1]##otherwise , it takes very good pictures ; shutter delay is n't so bad either . 
+##still , had to send it back to nikon for repair . 
+[t]amazing camera 
+##i am an amateur photographer and here is a piece of advise to all the folks who are thinking about making a move the digital world . 
+camera[+3]##nikon 4300 , i feel , is the best camera out there for the features and price . 
+##here were my requirements in a digital camera : 
+##1 . i had initially thought of buying a 2 or 3 megapixel camera but these are good for 4x6 " or 5x7 " prints and i wanted some really great 8x10 " photos once in a while . 
+##2 . i did not want a very small camera as it seems to get lost in my hands and i was n't comfortable with that . 
+##i wanted a decent sized camera with a contour for my fingers to hold it steadily . 
+##3 . i wanted a camera that had a lot of built-in settings for different types of suroundings while giving me an option to use my photography skills although , i am an amateur with an interest in photography by turning on the manual settings . 
+##4 . and , of course , i wanted a respected brand and had to stay within my budget because i had bought an expensive camcorder before but had n't used it much . 
+##depending on all the above requirements , i had narrowed down my search to nikon 4300 and canon powershot s400 models . 
+##nikon got the final nod for its settings auto and manual along with movie modes , medium; compact size , price , brand name , good software that is included and previous reviews . 
+##i should say i have been very happy with my decision ever since . 
+picture[+3]##the pictures are absolutely amazing - the camera captures the minutest of details . 
+##a few things that might make it even better : 
+indoor picture[-1]##1 . pictures taken in an indoor setting are a little dull and rarely hazy if you tend to take photographs from a distance . 
+delay[-2][u]##2 . it takes a while for the camera to actually capture the photograph from the time you click the button and i have seen people becoming a little impatient waiting for the flash to glow . 

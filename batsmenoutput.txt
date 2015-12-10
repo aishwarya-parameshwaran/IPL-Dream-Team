@@ -1,0 +1,7 @@
+David Miller,The polarity:-0.713,Negative
+MS Dhoni,The polarity:36.624000000000024,Neutral
+Chris Gayle,The polarity:15.506999999999987,Neutral
+Shaun Marsh,The polarity:0.0,Negative
+JP Duminy,The polarity:-0.2909999999999997,Negative
+Steve Smith,The polarity:7.1729999999999965,Neutral
+Tim Southee,The polarity:0.0,Negative
